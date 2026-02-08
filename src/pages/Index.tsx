@@ -14,39 +14,119 @@ const Index = () => {
   const nextEventDate = '14 февраля 2026';
   
   const categories = [
-    { name: 'Аккаунты', icon: 'User', count: 0 },
-    { name: 'Гемы', icon: 'Gem', count: 0 },
-    { name: 'Бойцы', icon: 'Swords', count: 0 },
-    { name: 'Скины', icon: 'Sparkles', count: 0 },
+    { name: 'Прокачка аккаунта', icon: 'TrendingUp', count: 15 },
+    { name: 'Дизайн аккаунта', icon: 'Palette', count: 8 },
+    { name: 'Видео по Brawl Stars', icon: 'Video', count: 12 },
   ];
 
   const products = [
     {
       id: 1,
-      title: 'Премиум аккаунт',
-      description: 'Полностью прокачанный аккаунт с легендарными бойцами',
-      price: 2500,
+      title: 'Прокачка до 30000 кубков',
+      description: 'Профессиональная прокачка аккаунта до 30000 кубков за 3-5 дней',
+      price: 3500,
       discount: null,
-      image: '💎',
-      category: 'Аккаунты'
+      image: '🏆',
+      category: 'Прокачка аккаунта'
     },
     {
       id: 2,
-      title: '10000 гемов',
-      description: 'Пополни запасы гемов для открытия ящиков',
-      price: 500,
+      title: 'Прокачка до 20000 кубков',
+      description: 'Быстрая прокачка аккаунта до 20000 кубков за 2-3 дня',
+      price: 2200,
       discount: 25,
-      image: '💰',
-      category: 'Гемы'
+      image: '⚡',
+      category: 'Прокачка аккаунта'
     },
     {
       id: 3,
-      title: 'Редкий скин "Золотой Эмс"',
-      description: 'Эксклюзивный золотой скин для персонажа Эмс',
+      title: 'Прокачка до 10000 кубков',
+      description: 'Начальная прокачка аккаунта до 10000 кубков за 1-2 дня',
       price: 1200,
       discount: null,
+      image: '🎯',
+      category: 'Прокачка аккаунта'
+    },
+    {
+      id: 4,
+      title: 'Премиум дизайн профиля',
+      description: 'Уникальный дизайн профиля с крутыми иконками и баннерами',
+      price: 800,
+      discount: null,
+      image: '🎨',
+      category: 'Дизайн аккаунта'
+    },
+    {
+      id: 5,
+      title: 'Базовый дизайн профиля',
+      description: 'Стильный дизайн профиля с подбором иконки и баннера',
+      price: 450,
+      discount: null,
       image: '✨',
-      category: 'Скины'
+      category: 'Дизайн аккаунта'
+    },
+    {
+      id: 6,
+      title: 'VIP дизайн с анимацией',
+      description: 'Эксклюзивный дизайн профиля с анимированными элементами',
+      price: 1500,
+      discount: 25,
+      image: '💎',
+      category: 'Дизайн аккаунта'
+    },
+    {
+      id: 7,
+      title: 'Гайд "Топ стратегии 2026"',
+      description: 'Полный видео-гайд по лучшим стратегиям игры на 2026 год',
+      price: 350,
+      discount: null,
+      image: '📹',
+      category: 'Видео по Brawl Stars'
+    },
+    {
+      id: 8,
+      title: 'Обучение "Мастер Brawl Ball"',
+      description: 'Видео-курс по освоению режима Brawl Ball от профессионала',
+      price: 550,
+      discount: null,
+      image: '⚽',
+      category: 'Видео по Brawl Stars'
+    },
+    {
+      id: 9,
+      title: 'Курс "От новичка до про"',
+      description: 'Полный обучающий курс из 10 видео для прогресса в игре',
+      price: 1800,
+      discount: 25,
+      image: '🎓',
+      category: 'Видео по Brawl Stars'
+    },
+    {
+      id: 10,
+      title: 'Прокачка до 15000 кубков',
+      description: 'Оптимальная прокачка аккаунта до 15000 кубков за 2 дня',
+      price: 1700,
+      discount: null,
+      image: '🔥',
+      category: 'Прокачка аккаунта'
+    },
+    {
+      id: 11,
+      title: 'Экспресс прокачка за сутки',
+      description: 'Максимально быстрая прокачка до 8000 кубков за 24 часа',
+      price: 900,
+      discount: null,
+      image: '⏰',
+      category: 'Прокачка аккаунта'
+    },
+    {
+      id: 12,
+      title: 'Тематический дизайн "Драконы"',
+      description: 'Эпичный дизайн профиля в драконьей тематике',
+      price: 650,
+      discount: null,
+      image: '🐉',
+      category: 'Дизайн аккаунта'
     },
   ];
 
@@ -216,7 +296,7 @@ const Index = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
           {categories.map((cat) => (
             <Card key={cat.name} className="hover:shadow-lg transition-all cursor-pointer hover:scale-105 hover:border-primary">
               <CardContent className="p-6 text-center">
@@ -239,54 +319,44 @@ const Index = () => {
           </Button>
         </div>
 
-        {products.length === 0 ? (
-          <Card className="p-12 text-center">
-            <div className="text-6xl mb-4">📦</div>
-            <h3 className="text-2xl font-bold mb-2">Товары появятся совсем скоро!</h3>
-            <p className="text-muted-foreground">
-              Продавцы готовятся к запуску. Первые товары появятся после старта ивентов в феврале 2026!
-            </p>
-          </Card>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {products.map((product) => (
-              <Card key={product.id} className="hover:shadow-xl transition-all overflow-hidden group">
-                <CardHeader className="relative">
-                  {product.discount && (
-                    <Badge className="absolute top-4 right-4 bg-destructive text-white animate-pulse-slow">
-                      -{product.discount}%
-                    </Badge>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {products.map((product) => (
+            <Card key={product.id} className="hover:shadow-xl transition-all overflow-hidden group">
+              <CardHeader className="relative">
+                {product.discount && (
+                  <Badge className="absolute top-4 right-4 bg-destructive text-white animate-pulse-slow">
+                    -{product.discount}%
+                  </Badge>
+                )}
+                <div className="text-7xl text-center my-4 group-hover:scale-110 transition-transform">
+                  {product.image}
+                </div>
+                <Badge variant="outline">{product.category}</Badge>
+              </CardHeader>
+              <CardContent>
+                <CardTitle className="mb-2">{product.title}</CardTitle>
+                <CardDescription>{product.description}</CardDescription>
+              </CardContent>
+              <CardFooter className="flex justify-between items-center">
+                <div>
+                  {product.discount ? (
+                    <>
+                      <p className="text-sm line-through text-muted-foreground">{product.price}₽</p>
+                      <p className="text-2xl font-bold text-primary">
+                        {Math.round(product.price * (1 - product.discount / 100))}₽
+                      </p>
+                    </>
+                  ) : (
+                    <p className="text-2xl font-bold">{product.price}₽</p>
                   )}
-                  <div className="text-7xl text-center my-4 group-hover:scale-110 transition-transform">
-                    {product.image}
-                  </div>
-                  <Badge variant="outline">{product.category}</Badge>
-                </CardHeader>
-                <CardContent>
-                  <CardTitle className="mb-2">{product.title}</CardTitle>
-                  <CardDescription>{product.description}</CardDescription>
-                </CardContent>
-                <CardFooter className="flex justify-between items-center">
-                  <div>
-                    {product.discount ? (
-                      <>
-                        <p className="text-sm line-through text-muted-foreground">{product.price}₽</p>
-                        <p className="text-2xl font-bold text-primary">
-                          {Math.round(product.price * (1 - product.discount / 100))}₽
-                        </p>
-                      </>
-                    ) : (
-                      <p className="text-2xl font-bold">{product.price}₽</p>
-                    )}
-                  </div>
-                  <Button className="bg-primary hover:bg-primary/90">
-                    Купить
-                  </Button>
-                </CardFooter>
-              </Card>
-            ))}
-          </div>
-        )}
+                </div>
+                <Button className="bg-primary hover:bg-primary/90">
+                  Купить
+                </Button>
+              </CardFooter>
+            </Card>
+          ))}
+        </div>
       </section>
 
       {/* Upcoming Events */}
